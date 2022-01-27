@@ -1,0 +1,34 @@
+﻿@model IEnumerable<ItemCollection>
+<div class="row">
+    <div class="col-10">
+        Account name: @User.Identity.Name
+    </div>
+    <div class="col">
+        <form method="post" asp-controller="Account" asp-action="Logout">
+            <button class="btn btn-primary" type="submit">Exit</button>
+        </form>
+    </div>
+</div>
+<br />
+<div class="list-group">
+    @foreach (var item in Model)
+    {
+        <div class="row">
+            <div class="col-10">
+                <a class="list-group-item alert-secondary" asp-action="ShowCollection" asp-controller="Collection" asp-route-Id="@item.Id">
+                    @item.Name
+
+                </a>
+            </div>
+            <div class="col">
+                <a class="btn btn-sm btn-primary " asp-action="EditCollection" asp-controller="Collection" asp-route-Id="@item.Id">Edit</a>
+                <a class="btn btn-sm btn-danger " asp-action="DeleteCollection" asp-controller="Collection" asp-route-Id="@item.Id">Delete</a>
+            </div>
+        </div>
+    }
+
+</div>
+
+<br />
+
+<a class="btn btn-dark" asp-action="AddCollection" asp-controller="Collection" asp-route-Id="@ViewBag.Id">add collection</a>

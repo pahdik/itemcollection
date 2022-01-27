@@ -1,0 +1,19 @@
+﻿@model ItemItemCollection
+@foreach(var item in Model.items) 
+{ 
+    <div>
+        Item 
+        <br />
+        <a asp-action="ShowItem" asp-controller="Item" asp-route-Id="@item.Id">@item.Name</a>
+    </div>
+    <hr />
+}
+@foreach (var collection in Model.collections)
+{
+    <div>
+        Collection
+        <br />
+        <a asp-action="ShowCollection" asp-controller="Collection" asp-route-Id="@collection.Id">@collection.Name</a>
+    </div>
+    <hr />
+}

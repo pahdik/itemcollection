@@ -1,0 +1,19 @@
+﻿@model EditUserViewModel
+
+<form asp-action="Edit" asp-controller="Users">
+    <div asp-validation-summary="All"></div>
+    <div class="form-group">
+        <input type="hidden" asp-for="Id" />
+    </div>
+    <div class="form-group" >
+        <label asp-for="Email" class="custom-control-label">Email</label>
+        <input type="text" asp-for="Email" class="form-control" />
+    </div>
+    <div>
+        <p><input type="radio" asp-for="Role" value="user" /> user</p>
+        <p><input type="radio" asp-for="Role" value="admin" /> admin</p>
+    </div>
+    <div >
+        <button type="submit" class="btn btn-outline-secondary">Save</button>
+    </div>
+</form>

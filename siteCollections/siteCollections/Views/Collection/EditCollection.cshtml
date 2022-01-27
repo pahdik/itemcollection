@@ -1,0 +1,88 @@
+﻿@model ItemCollection
+
+
+<div class="row">
+    <div class="col">
+        <form asp-action="EditCollection">
+            <div class="text-danger" asp-validation-summary="All"></div>
+
+            <div class="form-group">
+                <input type="hidden" asp-for="Id" value="@Model.Id" />
+                <input type="hidden" asp-for="UserId" value="@Model.UserId" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">Name</label>
+                <input type="text" asp-for="Name" class="form-control" value="@Model.Name" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Description" class="control-label">Description</label>
+                <input type="text" asp-for="Description" class="form-control" value="@Model.Description" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Topic" class="control-label">Topic</label>
+                <input type="text" asp-for="Topic" class="form-control" value="@Model.Topic" />
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="bth btn-outline-secondary">Save</button>
+            </div>
+        </form>
+    </div>
+    <div class="col">
+
+        @if (Model.Items != null)
+        {
+            <p>Items:</p>
+                    @foreach (var item in Model.Items)
+                    {
+                        <div class="row">
+                            <div class="col-8">
+                                <a class="list-group-item alert-secondary" asp-action="ShowItem" asp-controller="Item" asp-route-Id="@item.Id">
+                                    @item.Name
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a class="btn btn-sm btn-primary " asp-action="EditItem" asp-controller="Item" asp-route-Id="@item.Id">Edit</a>
+                                <a class="btn btn-sm btn-danger " asp-action="DeleteItem" asp-controller="Item" asp-route-Id="@item.Id">Delete</a>
+                            </div>
+                        </div>   
+                    }
+        }
+        <p>
+            <button class="btn btn-block btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                filters
+            </button>
+        </p>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <form method="post" asp-action="Filters" asp-controller="Collection">
+                    <input type="hidden" name="Id" value="@Model.Id" />
+                    <select class="form-control-sm" name="typeSort">
+                        <option value="1">alphabetically</option>
+                        <option value="2">by date added</option>
+                        <option value="3">alphabetically reverse</option>
+                        <option value="4">by date added reverse</option>
+                    </select>
+                    <div>
+                        filter by name
+                        <input class="form-control-sm" name="NameFilter" />
+                    </div>
+                    <div>
+                        filter by teg
+                        <input class="form-control-sm" name="TegFilter" />
+                    </div>
+                    <button class="btn btn-block btn-outline-secondary" type="submit">sort</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<br />
+<a class="btn btn-primary" asp-action="AddItem" asp-controller="Item" asp-route-Id="@Model.Id">Add item</a>
+<br />
+<a class="btn btn-primary" asp-action="PersonalPage" asp-controller="Home" asp-route-Id="@Model.UserId">return to personal page</a>

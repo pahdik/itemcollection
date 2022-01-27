@@ -1,0 +1,58 @@
+﻿@model Item
+<div>Name: @Model.Name</div>
+<div>Tegs: @Model.Tegs</div>
+@if (Model.StringField != null)
+    @foreach (var field in Model.StringField)
+    {
+        <div>@field.Name: @field.Data</div>
+    }
+@if (Model.TextField != null)
+    @foreach (var field in Model.TextField)
+    {
+        <div>@field.Name: @field.Data</div>
+    }
+@if (Model.IntField != null)
+    @foreach (var field in Model.IntField)
+    {
+        <div>@field.Name: @field.Data</div>
+    }
+@if (Model.BoolField != null)
+    @foreach (var field in Model.BoolField)
+    {
+        <div>@field.Name: @field.Data</div>
+    }
+<br />
+<a class="btn btn-primary" asp-action="ShowCollection" asp-controller="Collection" asp-route-Id="@Model.ItemCollectionId">Return to collection</a>
+<br />
+
+
+
+<footer class="border">
+    <div class="container">
+        <form asp-action="AddComment">
+            <input type="hidden" name="ItemId" value="@Model.Id" />
+            <label>Add comment:</label>
+            <input class="form-control" rows="2" placeholder="Add your comment" name="Text" />
+            <button class="btn btn-sm btn-primary pull-right" type="submit">Add comment</button>
+        </form>
+        <br />
+        <hr />
+        <div>
+            @foreach (var comment in Model.Comment)
+            {
+            <div class="media-block">
+
+                <div class="media-body">
+                    <div class="mar-btm">
+                        <div  class="text-semibold media-heading box-inline">@comment?.User?.UserName</div>
+
+                    </div>
+                    <p>@comment.Text</p>
+                    <hr />
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</footer>
+

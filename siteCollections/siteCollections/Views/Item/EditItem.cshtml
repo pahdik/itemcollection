@@ -1,0 +1,60 @@
+﻿@model Item
+@{ int i = 0;}
+<div class="row">
+    <div class="col">
+        <form asp-action="EditItem" method="post">
+            <div>Name:</div>
+            <input class="form-control" name="Name" value="@Model.Name" />
+            <div>Tegs:</div>
+            <input class="form-control" name="Tegs" value="@Model.Tegs" />
+
+            <input type="hidden" name="ItemCollectionId" value="@Model.ItemCollectionId" />
+
+            @foreach (var field in Model.TextField)
+            {
+                <input type="hidden" name="TextField[@i].Id" value="@field.Id" />
+                <div>Name of field:</div>
+                <input class="form-control" name="TextField[@i].Name" value="@field.Name" />
+                <div>Text:</div>
+                <input class="form-control" name="TextField[@i].Data" value="@field.Data" />
+                i++;
+            }
+            @{ i = 0; }
+            @foreach (var field in Model.StringField)
+            {
+                <input type="hidden" name="StringField[@i].Id" value="@field.Id" />
+                <div>Name of field:</div>
+                <input class="form-control" name="StringField[@i].Name" value="@field.Name" />
+                <div>String:</div>
+                <input class="form-control" name="StringField[@i].Data" value="@field.Data" />
+                i++;
+            }
+            @{i = 0;}
+            @foreach (var field in Model.IntField)
+            {
+                <input type="hidden" name="IntField[@i].Id" value="@field.Id" />
+                <div>Name of field:</div>
+                <input class="form-control" name="IntField[@i].Name" value="@field.Name" />
+                <div>Int:</div>
+                <input class="form-control" name="IntField[@i].Data" type="number" value="@field.Data" />
+                i++;
+            }
+            @{i = 0;}
+            @foreach (var field in Model.BoolField)
+            {
+                <input type="hidden" name="BoolField[@i].Id" value="@field.Id" />
+                <div>Name of field:</div>
+                <input class="form-control" name="BoolField[@i].Name" value="@field.Name" />
+                <div>Text:</div>
+                <input class="form-control" name="BoolField[@i].Data" type="checkbox" value="@field.Data" />
+                i++;
+            }
+
+            <button type="submit">submit</button>
+
+        </form>
+    </div>
+    <div class="col">
+
+    </div>
+</div>

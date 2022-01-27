@@ -1,0 +1,53 @@
+﻿@model ItemCollection
+<link rel="stylesheet" href="~/css/autocomplete.css" />
+<form class="col-5" autocomplete="off" asp-action="AddItem" method="post">
+    <div>
+        Name:
+        <input name="Name" />
+    </div>
+    <div>
+        Tegs:
+        <input class="form-control" id="myInput" type="text" name="Tegs" />
+    </div>
+
+    @for (int i = 0; i < Model.TextFields; i++)
+    {
+        <div>Name of field:</div>
+        <input class="form-control" name="TextField[@i].Name" />
+        <div>Text:</div>
+        <input class="form-control" name="TextField[@i].Data" />
+
+    }
+    @for (int i = 0; i < Model.StringFields; i++)
+    {
+        <div>Name of field:</div>
+        <input class="form-control" name="StringField[@i].Name" />
+        <div>String:</div>
+        <input class="form-control" name="StringField[@i].Data" />
+
+    }
+    @for (int i = 0; i < Model.IntFields; i++)
+    {
+        <div>Name of field:</div>
+        <input class="form-control" name="IntField[@i].Name" />
+        <div>Int:</div>
+        <input class="form-control" name="IntField[@i].Data" type="number" />
+
+    }
+    @for (int i = 0; i < Model.BoolFields; i++)
+    {
+        <div>Name of field:</div>
+        <input class="form-control" name="BoolField[@i].Name" />
+        <div>Text:</div>
+        <input class="form-control" name="BoolField[@i].Data" type="checkbox" />
+
+    }
+    <input class="invisible" type="number" name="ItemCollectionId" value="@Model.Id" />
+
+    <button class="btn btn-secondary" type="submit">submit</button>
+    @ViewBag.Tegs
+</form>
+<p class="invisible Tegs">@ViewBag.Tegs</p>
+
+
+<script src="~/js/autocomplete.js"></script>

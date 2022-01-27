@@ -1,0 +1,16 @@
+﻿@model CreateUserViewModel
+
+<form asp-action="Create" asp-controller="Users">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Email" >Email</label>
+        <input type="text" asp-for="Email" class="form-control-lg" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Password" >Password</label>
+        <input type="password" asp-for="Password" class="form-control-lg" />
+    </div>
+    <div class="form-group">
+        <button type="submit" class="bth btn-lg btn-success">Add</button>
+    </div>
+</form>

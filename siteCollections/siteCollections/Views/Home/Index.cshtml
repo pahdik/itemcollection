@@ -1,0 +1,31 @@
+﻿@model ItemItemCollection
+    <p class="display-4 lead">I welcome you to the site</p>
+    <p class="display-6 lead">On our site you can create your own collection, view collections of other users and comment on collections</p>
+<div class="row">
+    <div class="col">
+        <p>The bigest collections:</p>
+        <div class="overflow-auto" style="height:200px">
+            <div class="list-group">
+                @foreach (var item in Model.collections)
+                {
+                    <a class="list-geroup-item list-group-item-action" asp-action="ShowCollection" asp-controller="Collection" asp-route-Id="@item.Id">
+                        @item.Name
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <p>Last added items:</p>
+        <div class="overflow-auto" style="height:200px">
+            <div class="list-group">
+                @foreach (var item in Model.items)
+                {
+                    <a class="list-geroup-item list-group-item-action" asp-action="ShowItem" asp-controller="Item" asp-route-Id="@item.Id">
+                        @item.Name
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+</div>
