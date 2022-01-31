@@ -27,32 +27,35 @@
 
 
 
-<footer class="border">
-    <div class="container">
-        <form asp-action="AddComment">
-            <input type="hidden" name="ItemId" value="@Model.Id" />
-            <label>Add comment:</label>
-            <input class="form-control" rows="2" placeholder="Add your comment" name="Text" />
-            <button class="btn btn-sm btn-primary pull-right" type="submit">Add comment</button>
-        </form>
-        <br />
-        <hr />
-        <div>
-            @foreach (var comment in Model.Comment)
-            {
-            <div class="media-block">
+@if (User.Identity.IsAuthenticated)
+{
+    <footer class="border">
+        <div class="container">
+            <form asp-action="AddComment">
+                <input type="hidden" name="ItemId" value="@Model.Id" />
+                <label>Add comment:</label>
+                <input class="form-control" rows="2" placeholder="Add your comment" name="Text" />
+                <button class="btn btn-sm btn-primary pull-right" type="submit">Add comment</button>
+            </form>
+            <br />
+            <hr />
+            <div>
+                @foreach (var comment in Model.Comment)
+                {
+                    <div class="media-block">
 
-                <div class="media-body">
-                    <div class="mar-btm">
-                        <div  class="text-semibold media-heading box-inline">@comment?.User?.UserName</div>
+                        <div class="media-body">
+                            <div class="mar-btm">
+                                <div class="text-semibold media-heading box-inline">@comment?.User?.UserName</div>
 
+                            </div>
+                            <p>@comment.Text</p>
+                            <hr />
+                        </div>
                     </div>
-                    <p>@comment.Text</p>
-                    <hr />
-                </div>
+                }
             </div>
-            }
         </div>
-    </div>
-</footer>
+    </footer>
+}
 

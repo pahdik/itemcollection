@@ -10,13 +10,7 @@ namespace siteCollections.Models
 {
     public class DataContext:IdentityDbContext<User>
     {
-        public DataContext(DbContextOptions<DataContext> options) : base(options)
-        {
-
-            Database.Migrate();
-            Database.EnsureCreated(); 
-            
-        }
+        public DataContext(DbContextOptions<DataContext> options) : base(options) { }
         public DbSet<Item> Items { get; set; }
         public DbSet<ItemCollection> ItemСollections { get; set; }
         public DbSet<BoolField> BoolFields { get; set; }

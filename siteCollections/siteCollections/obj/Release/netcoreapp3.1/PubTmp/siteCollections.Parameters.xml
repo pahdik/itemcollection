@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="siteCollections20220129192019" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Пользователь\\Documents\\GitHub\\itemcollection\\siteCollections\\siteCollections\\obj\\Release\\netcoreapp3\.1\\PubTmp\\Out\\$" />
+  </parameter>
+  <parameter name="siteCollections.Models.DataContext" description="" value="Data Source=tcp:sitecollectionsdbserver.database.windows.net,1433;Initial Catalog=siteCollections_db;User Id=pahdik@sitecollectionsdbserver;Password=Testik228!" tags="dbfullsql">
+    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^C:\\Users\\Пользователь\\Documents\\GitHub\\itemcollection\\siteCollections\\siteCollections\\obj\\Release\\netcoreapp3\.1\\PubTmp\\EFSQLScripts\\siteCollections\.Models\.DataContext\.sql$" />
+  </parameter>
+</parameters>

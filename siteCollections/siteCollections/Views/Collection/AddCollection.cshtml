@@ -1,20 +1,20 @@
-﻿<form asp-action="AddCollection" method="post">
-    <input type="hidden" name="UserId" value="@ViewBag.Id" />
-    <div>Name:</div>
-    <input name="Name" />
-    <div>Dascription:</div>
-    <input name="Description" />
-    <div>Topic</div>
-    <input name="Topic" />
-    <div>IntFields</div>
-    <input name="IntFields" />
-    <div>TextFields</div>
-    <input name="TextFields" />
-    <div>StringFields</div>
-    <input name="StringFields" />
-    <div>BoolFields</div>
-    <input name="BoolFields" />
-    <div>DataFields</div>
-    <input name="DataFields" />
-    <button type="submit">Submit</button>
-</form>
+﻿<div class="col-9">
+    <form asp-action="AddCollection" method="post">
+        <input type="hidden" name="UserId" value="@ViewBag.Id" />
+        <div>Name</div>
+        <input class="form-control" name="Name" />
+        <div>Dascription</div>
+        <input class="form-control" name="Description" />
+        <div>Topic</div>
+        <input class="form-control" name="Topic" />
+        <div>Number of numeric fields</div>
+        <input class="form-control" name="IntFields" />
+        <div>Number of text fields</div>
+        <input class="form-control" name="TextFields" />
+        <div>Number of string fields</div>
+        <inpu class="form-control" name="StringFields" />
+        <div>Number of boolean fields</div>
+        <input class="form-control" name="BoolFields" />
+        <button class="btn btn-outline-success" type="submit">Add</button>
+    </form>
+</div>

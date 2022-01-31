@@ -1,34 +1,26 @@
-﻿@using Microsoft.AspNetCore.Identity
+﻿
 @model IEnumerable<UserViewModel>
 
 <table class="table">
-    <tr ><th class="col-5">Email</th><th class="col-2">Role</th><th class="col-5"></th></tr>
+    <tr ><th class="col-6">Email</th><th class="col-6"></th></tr>
     @foreach (var user in Model)
     {
         <tr>
             <td>
-            <a asp-action="UserPage" asp-route-Id="@user.user.Id">@user.user.Email</a>
-            </td>
-            @if (user.Roles.Contains("admin"))
-            {
-                <td>admin</td>
-            }
-            else
-            {
-                <td>user</td>
-            }
+            <a asp-action="UserPage" asp-route-Id="@user?.user?.Id">@user?.user?.Email</a>
+          
 
         <td class="table">
 
-            <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-Id="@user.user.Id">delete</a>
-            <a class="btn btn-sm btn-primary" asp-action="Edit" asp-route-Id="@user.user.Id">Edit</a>            
+            <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-Id="@user?.user?.Id">delete</a>
+            <a class="btn btn-sm btn-primary" asp-action="Edit" asp-route-Id="@user?.user?.Id">Edit</a>            
                 @if (user.IsBlock)
                 {
-                    <a class="btn btn-sm btn-success" asp-action="Block" asp-route-Id="@user.user.Id">Unlock</a>
+                    <a class="btn btn-sm btn-success" asp-action="Block" asp-route-Id="@user?.user?.Id">Unlock</a>
                 }
                 else
                 {
-                    <a class="btn btn-sm btn-danger" asp-action="Block" asp-route-Id="@user.user.Id">Lock</a>
+                    <a class="btn btn-sm btn-danger" asp-action="Block" asp-route-Id="@user?.user?.Id">Lock</a>
                 }
 
         </td>

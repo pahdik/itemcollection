@@ -1,10 +1,10 @@
 ﻿@model ItemItemCollection
-    <p class="display-4 lead">I welcome you to the site</p>
-    <p class="display-6 lead">On our site you can create your own collection, view collections of other users and comment on collections</p>
+<p class="display-4 lead">I welcome you to the site</p>
+<p class="display-6 lead">On our site you can create your own collection, view collections of other users and comment on collections</p>
 <div class="row">
     <div class="col">
         <p>The bigest collections:</p>
-        <div class="overflow-auto" style="height:200px">
+        <div class="overflow-auto" >
             <div class="list-group">
                 @foreach (var item in Model.collections)
                 {
@@ -17,7 +17,7 @@
     </div>
     <div class="col">
         <p>Last added items:</p>
-        <div class="overflow-auto" style="height:200px">
+        <div class="overflow-auto">
             <div class="list-group">
                 @foreach (var item in Model.items)
                 {
@@ -27,5 +27,19 @@
                 }
             </div>
         </div>
+    </div>
+</div>
+<br />
+<p>
+    <button class="btn btn-block btn-outline-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Tegs
+    </button>
+</p>
+<div class="collapse" id="collapseExample">
+    <div >
+        @foreach(Teg teg in ViewBag.Tegs)
+            {
+                <a asp-action="SearchByTeg" asp-route-teg="@teg.Text">@teg.Text</a>
+            }
     </div>
 </div>

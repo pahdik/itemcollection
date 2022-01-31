@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Этот файл используется процессом публикации или упаковки вашего веб-проекта. Можно настроить поведение этого процесса,
+изменив этот файл MSBuild. Подробности см. на странице https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAl+IFIFxsFkOjzbDmooPXaAAAAAACAAAAAAAQZgAAAAEAACAAAAAOKGC5ApcS4afz7aZeDNL5TFiVCUMbYnCyTIuu4OS/xwAAAAAOgAAAAAIAACAAAAD2ClEdzk0Vv3/flg0flDnmjRZqe0IzVSSz7tCyeYgM8oAAAADO/wiLuAn4vktzLCoLfOdz77NZxJXFsCmVa9WubG0kJYVjCqKKX0YGVVL+00QVtqlJV/++Aq4VzPZpvnUYid0dJablsHX1YYDW5D4jzZsXr4hx2zTiolVX0B1bxrOU9viXUumAfsm1/FwzRCAbViArzA4Z9wZnVfGLBjA/3d/5k0AAAAD4y5gt0OXrisz8khaECyvnksLFwZaXdGzbpNv99hQU/yuz/UngU/QIhoN/aBw64Ol9TUQh9jG1t90klKJ8jRUz</EncryptedPassword>
+    <History>True|2022-01-31T02:18:26.0170532Z;True|2022-01-31T05:13:37.3711682+03:00;True|2022-01-31T05:01:13.3549202+03:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=tcp:sitecollectionsdbserver.database.windows.net,1433%3bInitial Catalog=siteCollections_db%3bUser Id=pahdik%40sitecollectionsdbserver%3bPassword=Testik228!</Value>
+    </DestinationConnectionStrings>
+    <DestinationConnectionStrings Include="Kestrel:Certificates:Development:Password">
+      <Value>Data Source=tcp:sitecollectionsdbserver.database.windows.net,1433%3bInitial Catalog=siteCollections_db%3bUser Id=pahdik%40sitecollectionsdbserver%3bPassword=Testik228!</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="siteCollections.Models.DataContext">
+      <Value>Data Source=tcp:sitecollectionsdbserver.database.windows.net,1433%3bInitial Catalog=siteCollections_db%3bUser Id=pahdik%40sitecollectionsdbserver%3bPassword=Testik228!</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

@@ -1,9 +1,9 @@
 ﻿@model ItemCollection
 <link rel="stylesheet" href="~/css/autocomplete.css" />
-<form class="col-5" autocomplete="off" asp-action="AddItem" method="post">
+<form class="col-9" autocomplete="off" asp-action="AddItem" method="post">
     <div>
         Name:
-        <input name="Name" />
+        <input class="form-control" name="Name" />
     </div>
     <div>
         Tegs:
@@ -42,10 +42,10 @@
         <input class="form-control" name="BoolField[@i].Data" type="checkbox" />
 
     }
-    <input class="invisible" type="number" name="ItemCollectionId" value="@Model.Id" />
+    
 
-    <button class="btn btn-secondary" type="submit">submit</button>
-    @ViewBag.Tegs
+    <button class="btn btn-outline-success" type="submit">Add</button>
+    <input class="invisible" type="number" name="ItemCollectionId" value="@Model.Id" />
 </form>
 <p class="invisible Tegs">@ViewBag.Tegs</p>
 

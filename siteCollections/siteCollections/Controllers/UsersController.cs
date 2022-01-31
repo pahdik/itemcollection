@@ -25,7 +25,7 @@ namespace siteCollections.Controllers
             List<UserViewModel> UserList = new List<UserViewModel>();
             foreach (var model in userManager.Users)
             {
-                UserList.Add(new UserViewModel { user = model, Roles = await userManager.GetRolesAsync(model),IsBlock= await userManager.IsLockedOutAsync(model) });
+                UserList.Add(new UserViewModel { user = model,IsBlock= await userManager.IsLockedOutAsync(model) });
             }
             return View(UserList);
         }
@@ -145,7 +145,7 @@ namespace siteCollections.Controllers
                 action = "PersonalPage",
                 id = Id
             });
-            //могу добавить только  один элемент(после добавляются не пользователю а админу)
+            
         }
         
 

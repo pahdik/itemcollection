@@ -1,5 +1,5 @@
 ﻿@model ItemItemCollection
-@foreach(var item in Model.items) 
+@foreach(var item in Model?.items) 
 { 
     <div>
         Item 
@@ -8,7 +8,7 @@
     </div>
     <hr />
 }
-@foreach (var collection in Model.collections)
+@foreach (var collection in Model?.collections)
 {
     <div>
         Collection

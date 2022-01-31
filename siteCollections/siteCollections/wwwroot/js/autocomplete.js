@@ -1,7 +1,7 @@
-﻿const tegs = document.querySelector(".Tegs").innerHTML;
-const countries = tegs.split(" ");
-console.log(countries);
-autocomplete(document.getElementById("myInput"), countries);
+﻿const model= document.querySelector(".Tegs").innerHTML;
+const tegs = String(model).split(' ');
+
+autocomplete(document.getElementById("myInput"), tegs);
 function autocomplete(inp, arr) {
     var currentFocus;
     inp.addEventListener("input", function (e) {

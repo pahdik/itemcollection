@@ -61,10 +61,10 @@
                 <form method="post" asp-action="Filters" asp-controller="Collection">
                     <input type="hidden" name="Id" value="@Model.Id" />
                     <select class="form-control-sm" name="typeSort">
-                        <option value="1">alphabetically</option>
-                        <option value="2">by date added</option>
-                        <option value="3">alphabetically reverse</option>
-                        <option value="4">by date added reverse</option>
+                        <option  value="1">alphabetically ascending</option>
+                        <option value="2">by date</option>
+                        <option value="3">alphabetically descending</option>
+                        <option value="4">date in reverse order</option>
                     </select>
                     <div>
                         filter by name

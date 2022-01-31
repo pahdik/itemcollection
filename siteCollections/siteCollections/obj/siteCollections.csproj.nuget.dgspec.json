@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\2 курс\\siteCollections\\siteCollections\\siteCollections.csproj": {}
+    "C:\\Users\\Пользователь\\Documents\\GitHub\\itemcollection\\siteCollections\\siteCollections\\siteCollections.csproj": {}
   },
   "projects": {
-    "D:\\2 курс\\siteCollections\\siteCollections\\siteCollections.csproj": {
+    "C:\\Users\\Пользователь\\Documents\\GitHub\\itemcollection\\siteCollections\\siteCollections\\siteCollections.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\2 курс\\siteCollections\\siteCollections\\siteCollections.csproj",
+        "projectUniqueName": "C:\\Users\\Пользователь\\Documents\\GitHub\\itemcollection\\siteCollections\\siteCollections\\siteCollections.csproj",
         "projectName": "siteCollections",
-        "projectPath": "D:\\2 курс\\siteCollections\\siteCollections\\siteCollections.csproj",
+        "projectPath": "C:\\Users\\Пользователь\\Documents\\GitHub\\itemcollection\\siteCollections\\siteCollections\\siteCollections.csproj",
         "packagesPath": "C:\\Users\\Пользователь\\.nuget\\packages\\",
-        "outputPath": "D:\\2 курс\\siteCollections\\siteCollections\\obj\\",
+        "outputPath": "C:\\Users\\Пользователь\\Documents\\GitHub\\itemcollection\\siteCollections\\siteCollections\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -70,12 +70,6 @@
               "target": "Package",
               "version": "[5.0.10, )"
             },
-            "Microsoft.SourceLink.GitHub": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[1.1.1, )"
-            },
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
               "version": "[1.11.1, )"
@@ -95,12 +89,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[3.1.22, 3.1.22]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"

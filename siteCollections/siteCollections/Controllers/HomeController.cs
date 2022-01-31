@@ -27,9 +27,12 @@ namespace siteCollections.Controllers
             ItemItemCollection iit = new ItemItemCollection();
             iit.items = ItemRepo.Items.AsEnumerable().TakeLast(7).Reverse();
             iit.collections = CollectionRepo.ItemCollections.OrderByDescending(x=>x.Items.Count);
+            ViewBag.Tegs = ItemRepo.Tegs;
+
             return View(iit);
         }
-
+        
+        
         public async Task<IActionResult> PersonalPage(string Id, int model=2,string TopicFilter="" , string NameFilter="")
         {
             if (Id == null)
@@ -64,6 +67,11 @@ namespace siteCollections.Controllers
             model.items = ItemRepo.Items.Where(x => x.Name.Contains(SearchLine));
 
             return View("Search", model);
+        }
+        public IActionResult SearchByTeg(string teg)
+        {
+            var model = ItemRepo.Items.Where(x => x.Tegs.Contains(teg)).ToList();
+            return View("Search", new ItemItemCollection() { items = model, collections=new List<ItemCollection>() }); ;
         }
 
     }
